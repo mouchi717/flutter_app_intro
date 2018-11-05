@@ -4,7 +4,8 @@ import 'package:flutter/material.dart';
 //import 'package:flutter_app_intro/3-3/main.dart';
 //import 'package:flutter_app_intro/3-4/main.dart';
 //import 'package:flutter_app_intro/3-5/main.dart';
-import 'package:flutter_app_intro/3-6/main.dart';
+//import 'package:flutter_app_intro/3-6/main.dart';
+import 'package:flutter_app_intro/3-7/main.dart';
 
 //void main() => runApp(new MyApp());
 //void main() => runApp(new MyApp31());
@@ -12,7 +13,8 @@ import 'package:flutter_app_intro/3-6/main.dart';
 //void main() => runApp(new MyApp33());
 //void main() => runApp(new MyApp34());
 //void main() => runApp(new MyApp35());
-void main() => runApp(new MyApp36());
+//void main() => runApp(new MyApp36());
+void main() => runApp(new MyApp37());
 
 class MyApp extends StatelessWidget {
 
