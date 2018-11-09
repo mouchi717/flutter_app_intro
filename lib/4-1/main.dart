@@ -55,9 +55,8 @@ class _MyHomePageState41 extends State<MyHomePage> {
                 ),
               ),
 
-              FlatButton(
+              RaisedButton(
                 onPressed: buttonPressed,
-                color: Colors.black12,
                 child: Padding(
                   padding: EdgeInsets.all(10.0),
                   child: Icon(
