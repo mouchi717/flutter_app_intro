@@ -55,16 +55,12 @@ class _MyHomePageState41 extends State<MyHomePage> {
                 ),
               ),
 
-              RaisedButton(
+              IconButton(
                 onPressed: buttonPressed,
-                child: Padding(
-                  padding: EdgeInsets.all(10.0),
-                  child: Icon(
-                    Icons.android,
-                    size: 50.0,
-                  ),
-                ),
-              )
+                icon: Icon(Icons.insert_emoticon),
+                color: Colors.red,
+                iconSize: 100.0,
+              ),
             ],
           )
         ,
