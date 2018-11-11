@@ -26,7 +26,7 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
 
   var _message;
-  final controller = TextEditingController();
+  bool _checked = false;
 
   @override
   void initState() {
@@ -48,41 +48,48 @@ class _MyHomePageState extends State<MyHomePage> {
             mainAxisSize: MainAxisSize.max,
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: <Widget>[
-              Padding(
-                child:
-                  Text(
-                    _message,
-                      style: TextStyle(fontSize:32.0,
-                        color: const Color(0xFF000000),
-                        fontWeight: FontWeight.w400,
-                        fontFamily: "Roboto"),
-                ),
 
-                padding: const EdgeInsets.all(20.0),
+              Text(
+                _message,
+                  style: TextStyle(fontSize:32.0,
+                    color: const Color(0xFF000000),
+                    fontWeight: FontWeight.w400,
+                    fontFamily: "Roboto"),
               ),
 
               Padding(
-                child:
-                  TextField(
-                    controller: controller,
-                    onChanged: textChanged,
-                    style: TextStyle(fontSize:28.0,
-                      color: const Color(0xFF000000),
-                      fontWeight: FontWeight.w400,
-                      fontFamily: "Roboto"),
-                ),
-
                 padding: const EdgeInsets.all(10.0),
               ),
+
+              Row(
+                mainAxisAlignment: MainAxisAlignment.start,
+                mainAxisSize: MainAxisSize.max,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: <Widget>[
+
+                  Checkbox(
+                    value: _checked,
+                    onChanged: checkChanged,
+                  ),
+
+                  Text(
+                    "check",
+                      style: TextStyle(fontSize:28.0,
+                        fontWeight: FontWeight.w400,
+                        fontFamily: "Roboto"),
+                  ),
+                ],
+              )
             ]
         ),
       ),
     );
   }
 
-  void textChanged(String val) {
+  void checkChanged(bool value) {
     setState(() {
-      _message = val.toUpperCase();
+      _checked = value;
+      _message = value ? 'checked!' : 'not checked...';
     });
   }
 }
