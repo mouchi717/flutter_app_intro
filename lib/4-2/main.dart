@@ -4,15 +4,15 @@ class MyApp4 extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return new MaterialApp(
+    return MaterialApp(
       title: 'Generated App',
-      theme: new ThemeData(
+      theme: ThemeData(
         primarySwatch: Colors.blue,
         primaryColor: const Color(0xFF2196f3),
         accentColor: const Color(0xFF2196f3),
         canvasColor: const Color(0xFFfafafa),
       ),
-      home: new MyHomePage(),
+      home: MyHomePage(),
     );
   }
 }
@@ -20,7 +20,7 @@ class MyApp4 extends StatelessWidget {
 class MyHomePage extends StatefulWidget {
   MyHomePage({Key key}) : super(key: key);
   @override
-  _MyHomePageState createState() => new _MyHomePageState();
+  _MyHomePageState createState() => _MyHomePageState();
 }
 
 class _MyHomePageState extends State<MyHomePage> {
@@ -65,6 +65,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 child:
                   TextField(
                     controller: controller,
+                    onChanged: textChanged,
                     style: TextStyle(fontSize:28.0,
                       color: const Color(0xFF000000),
                       fontWeight: FontWeight.w400,
@@ -73,28 +74,15 @@ class _MyHomePageState extends State<MyHomePage> {
 
                 padding: const EdgeInsets.all(10.0),
               ),
-
-              FlatButton(
-                padding: EdgeInsets.all(10.0),
-                  color: Colors.lightBlueAccent,
-                  onPressed:buttonPressed,
-                  child: Text(
-                    "Push me!",
-                      style: TextStyle(fontSize:32.0,
-                        color: const Color(0xFF000000),
-                        fontWeight: FontWeight.w400,
-                        fontFamily: "Roboto"),
-                  )
-              )
             ]
         ),
       ),
     );
   }
-  void buttonPressed(){
+
+  void textChanged(String val) {
     setState(() {
-      _message = 'you said: ' + controller.text;
+      _message = val.toUpperCase();
     });
   }
-
 }
