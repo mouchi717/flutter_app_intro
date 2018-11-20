@@ -81,7 +81,23 @@ class _MyHomePageState extends State<MyHomePage> {
       builder: (BuildContext context) => AlertDialog (
         title: Text("Hello!!"),
         content: Text("This is sample."),
+        actions: <Widget>[
+          FlatButton(
+              onPressed: () => Navigator.pop<String>(context, 'Cancel'),
+              child: Text("Cancel"),
+          ),
+          FlatButton(
+              onPressed: () => Navigator.pop<String>(context, 'OK'),
+              child: Text("OK"),
+          ),
+        ],
       ),
-    );
+    ).then<void>((value) => resultAlert(value));
+  }
+
+  void resultAlert(String value) {
+    setState(() {
+      _message = 'selected: $value';
+    });
   }
 }
