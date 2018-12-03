@@ -62,15 +62,19 @@ class _MyRenderBox extends RenderBox {
     Canvas c = context.canvas;
     int dx = offset.dx.toInt();
     int dy = offset.dy.toInt();
+    // 正円の描画
     Paint p = Paint();
     p.style = PaintingStyle.fill;
     p.color = Color.fromARGB(150, 0, 200, 255);
-    Rect r = Rect.fromLTWH(dx + 50.0, dy + 50.0, 150.0, 150.0);
-    c.drawRect(r, p);
+    Offset ctr = Offset(dx + 100.0, dy + 100.0);
+    c.drawCircle(ctr, 75.0, p);
+    // 楕円1の描画
     p.style = PaintingStyle.stroke;
     p.color = Color.fromARGB(150, 200, 0, 255);
     p.strokeWidth = 10.0;
-    r = Rect.fromLTWH(dx + 100.0, dy + 100.0, 150.0, 150.0);
-    c.drawRect(r, p);
+    Rect r = Rect.fromLTWH(dx + 100.0, dy + 50.0, 200.0, 150.0);
+    c.drawOval(r, p);
+    r = Rect.fromLTWH(dx + 50.0, dy + 100.0, 150.0, 200.0);
+    c.drawOval(r, p);
   }
 }
